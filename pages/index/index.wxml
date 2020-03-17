@@ -1,0 +1,32 @@
+<!-- 首页轮播图分区 -->
+<view class="slider">
+ <swiper indicator-dots="{{ true }}"
+  autoplay="{{ true }}" interval="2500" duration="400" circular="{{ true }}">
+  <block wx:for="{{ sliderList }}" wx:key="id">
+    <swiper-item> 
+      <image src="{{ item.image }}" class="slide-image" width="355" height="150"/>
+    </swiper-item>
+  </block>
+</swiper>
+</view> 
+
+<!-- 首页导航分区 -->
+<view class="index_nav bgw">
+  <navigator class="nav_item" wx:for="{{ navList }}" wx:key="id" url="/pages/shopList/shopList?cat={{ item.id }}">
+    <image src="{{ item.icon }}"></image>
+    <text>{{ item.name }}</text>
+  </navigator>
+</view>
+
+<!-- 间隔 -->
+<view class="divider"></view>
+
+<!-- 首页入口分区 -->
+<view class="index_enter bgw">
+  <navigator class="enter_item">
+    <image src='/assets/images/link-01.png'></image>
+  </navigator>
+  <navigator class="enter_item">
+    <image src='/assets/images/link-02.png'></image>
+  </navigator>
+</view>
